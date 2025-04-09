@@ -22,7 +22,8 @@ app.use('/api/auth', require('./routes/auth.route'));
 console.log("Routes auth bien chargées !")
 //Route pour la manipulation des users par l'admin
 app.use('/api/user', require('./routes/user.route'));
-
+//Route pour la manipulation des produits
+app.use('/api/product', require('./routes/product.route'));
 // 03 PORT
 const PORT=process.env.PORT || 7500;
 

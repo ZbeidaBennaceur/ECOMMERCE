@@ -1,5 +1,5 @@
 const express=require('express')
-const { getAllUsers, deleteUser } = require('../controllers/user.controller')
+const { getAllUsers, deleteUser, getOneUser } = require('../controllers/user.controller')
 const isAdmin = require('../middleware/isAdmin')
 
 const router =express.Router()
@@ -15,6 +15,9 @@ router.get("/allUsers",isAdmin,getAllUsers )
 //admin supprime un utilisateur
 
 router.delete('/:id',isAdmin,deleteUser)
+
+//get one id
+router.get('/:id', isAdmin, getOneUser)
 
 
 module.exports=router;
